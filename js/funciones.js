@@ -22,19 +22,6 @@ function filtrarActores() {
         }
 }
 
-//// BUSCAR POR ACTOR AÑO O NOMBRE
-function filtroFull() {
-    let buscar = prompt("Buscar por Nombre, Año o Actor:").toUpperCase()
-    let encontrados = peliculas.filter((pelicula) => {
-        if ((pelicula.reparto.includes(buscar)) || (pelicula.anio.includes(buscar)) || (pelicula.nombre.includes(buscar))) {
-            console.table(encontrados)
-        } else {
-            alert("⚠ No se encontraron peliculas coincidentes")
-        }
-    }) 
-        
-}
-
 //// ORDENAR POR AÑO
 function ordenarPorAnio() {
     let peliculasOrdenadas = peliculas.sort((a, b) => {
