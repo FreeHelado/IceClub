@@ -1,14 +1,5 @@
 // Colores //
 $colorPrimario:#0700d8;
-$colorPrimarioDark: darken($colorPrimario, 5%);
-$colorPrimarioLight: lighten($colorPrimario, 70%);
+$colorPrimarioDark: darken($colorPrimario, 25%);
+$colorPrimarioLight: lighten($colorPrimario, 50%);
 $colorPrimarioMedio: lighten($colorPrimario, 30%);
-$colorSecundario:#feaa7e;
-$colorSecundarioDark: darken($colorSecundario, 10%);
-$negroPrimario:#262626;
-$colorGrisClaro:#e9e9e9;
-$colorDestacado:#d41737;
-$colorTerciario:#1f3f7a;
-$colorTerciarioClaro:#4774c7;
-$colorVentasBg:#53cbef;
-$colorVentasTxt: darken($colorVentasBg, 50%);
