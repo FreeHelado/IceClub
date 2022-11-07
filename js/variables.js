@@ -7,3 +7,7 @@ const peliculas = [{id: 1234, nombre: "VOLVER AL FUTURO", anio: 1985, estreno: f
                    ]
 
 const carrito = []
+
+const socios = [{numeroDeSocio: 666, nombre: "ALEJANDRO FERREIRA", direccion: "BRUM 315, CANELONES", clave: "mclfy86"},
+                {numeroDeSocio: 5656, nombre: "NICOLÁS FERREIRA", direccion: "BRUM 315, CANELONES", clave: "mclfy86"},
+                {numeroDeSocio: 1250, nombre: "MARTINA FERREIRA", direccion: "BRUM 315, CANELONES", clave: "mclfy86"}]

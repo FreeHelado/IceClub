@@ -102,3 +102,17 @@ function reservar() {
     console.log("Gracias por ser parte de ICECLUB 🖤")
 }
 
+
+//// NUEVO INGRESO CON USUARIOS y RESERVA NUEVA
+
+// BUSCADOR DE SOCIO
+function buscarSocio() {
+    console.log("BIENVENID@S A ICECLUB 🍦")
+    let nroSocio = parseInt(prompt("BIENVENID@S A ICECLUB 🍦 | Ingresa tu número de socio 🍿"))
+    let index = socios.findIndex((socio) => socio.numeroDeSocio === nroSocio)
+        if (index > -1) {
+            console.table(socios[index])
+        } else {
+            console.warn("🙈 No se encontró el nro de Socio")
+        }
+}

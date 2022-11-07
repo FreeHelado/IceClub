@@ -1,0 +1,23 @@
+{
+  "name": "iceclub-proyecto-cursojs",
+  "version": "1.0.0",
+  "description": "Proyecto del curso javascript de CoderHouse",
+  "main": "index.js",
+  "scripts": {
+    "dale-sass": "node-sass --include-path scss ./scss/estilos.scss ./css/estilos.css -w",
+    "sourcemap-sass": "node-sass --watch --source-map true scss/estilos.scss css/estilos.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FreeHelado/IceClub.git"
+  },
+  "author": "Alejandro Ferreira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FreeHelado/IceClub/issues"
+  },
+  "homepage": "https://github.com/FreeHelado/IceClub#readme",
+  "devDependencies": {
+    "node-sass": "^7.0.3"
+  }
+}

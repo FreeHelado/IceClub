@@ -1,1 +1,3 @@
 git remote add origin https://github.com/FreeHelado/IceClub.git
+node_modules/
+.vscode/
