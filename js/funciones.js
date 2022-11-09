@@ -4,7 +4,7 @@ function filtrarPeliculas() {
     let encontrados = peliculas.filter((pelicula) => pelicula.nombre.includes(peli)) 
     
         if (encontrados.length > 0) {
-            console.table(encontrados)
+            cargarPeliculas(encontrados)
         } else {
             alert("⚠ No se encontraron peliculas coincidentes")
         }
@@ -16,7 +16,7 @@ function filtrarActores() {
     let encontrados = peliculas.filter((pelicula) => pelicula.reparto.includes(actor)) 
     
         if (encontrados.length > 0) {
-            console.table(encontrados)
+            cargarPeliculas(encontrados)
         } else {
             alert("⚠ No se encontraron peliculas coincidentes")
         }
@@ -33,7 +33,7 @@ function ordenarPorAnio() {
         }
         return 0
     })
-    console.table(peliculasOrdenadas)
+    cargarPeliculas(peliculas)
 }
 
 

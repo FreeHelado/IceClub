@@ -1,13 +1,51 @@
 // ARRAY DE OBJETOS
-const peliculas = [{id: 1234, nombre: "VOLVER AL FUTURO", anio: 1985, estreno: false, reparto: ["MICHAEL J. FOX", "CHRISTOPHER LLOYD", "CRISPIN GLOVER", "LEA THOMPSON"], categoria: "CIENCIA FICCION"},
-                   {id: 2345, nombre: "EL JOVEN MANOSDE TIJERA", anio: 1990, estreno: true, reparto: ["JOHNNY DEPP"], categoria: "DRAMA"},
-                   {id: 3456, nombre: "VOLVER AL FUTURO III", anio: 1990, estreno: true, reparto: ["MICHAEL J. FOX", "CHRISTOPHER LLOYD", "CRISPIN GLOVER", "LEA THOMPSON"], categoria: "CIENCIA FICCION"},
-                   {id: 4567, nombre: "LOS CAZAFANTASMAS", anio: 1984, estreno: false, reparto: ["BILL MURRAY"], categoria: "COMEDIA"},
-                   {id: 5678, nombre: "MI POBRR ANGELITO", anio: 1990, estreno: true, reparto: ["MACAULAY CULKIN"], categoria: "COMEDIA"},
+const peliculas = [{id: 1234, 
+                    imagen: "./assets/img/backtothefuture.jpg", 
+                    nombre: "VOLVER AL FUTURO", 
+                    anio: 1985, 
+                    descripcion: "Una máquina del tiempo transporta a un adolescente a los años 50, cuando sus padres todavía estudiaban en la secundaria.", 
+                    estreno: false, 
+                    reparto: "MICHAEL J. FOX", 
+                    categoria: "CIENCIA FICCION"},
+                   {id: 2345, 
+                    imagen: "./assets/img/manosdetijera.jpg", 
+                    nombre: "EL JOVEN MANOSDE TIJERA", 
+                    anio: 1990,
+                    descripcion: "La creación incompleta de un inventor fallecido se convierte instantáneamente en una celebridad cuando una mujer alegre lo lleva a su casa.",  
+                    estreno: true, 
+                    reparto: "JOHNNY DEPP", 
+                    categoria: "DRAMA"},
+                   {id: 3456, 
+                    imagen: "./assets/img/backtothefuture3.jpg", 
+                    nombre: "VOLVER AL FUTURO III", 
+                    anio: 1990,
+                    descripcion: "Marty McFly sigue en 1955 y Doc ha retrocedido al año 1885, la época del salvaje oeste.", 
+                    estreno: true, 
+                    reparto: "MICHAEL J. FOX", 
+                    categoria: "CIENCIA FICCION"},
+                   {id: 4567, 
+                    imagen: "./assets/img/cazafantasmas.jpg", 
+                    nombre: "LOS CAZAFANTASMAS", 
+                    anio: 1984, 
+                    descripcion: "Cuatro investigadores de sucesos paranormales desempleados crean una empresa en Nueva York con el propósito de limpiar la ciudad de fantasmas.", 
+                    estreno: false, 
+                    reparto: "BILL MURRAY", 
+                    categoria: "COMEDIA"},
+                   {id: 5678, 
+                    imagen: "./assets/img/mipobreangelito.jpg", 
+                    nombre: "MI POBRR ANGELITO", 
+                    anio: 1990,
+                    descripcion: "Un encantador niño de 8 años desafía a un torpe par de ladrones cuando, accidentalmente, sus padres lo olvidan en casa.",  
+                    estreno: true, 
+                    reparto: "MACAULAY CULKIN", 
+                    categoria: "COMEDIA"},
                    ]
-
-const carrito = []
 
 const socios = [{numeroDeSocio: 666, nombre: "ALEJANDRO FERREIRA", direccion: "BRUM 315, CANELONES", clave: "mclfy86"},
                 {numeroDeSocio: 5656, nombre: "NICOLÁS FERREIRA", direccion: "BRUM 315, CANELONES", clave: "mclfy86"},
-                {numeroDeSocio: 1250, nombre: "MARTINA FERREIRA", direccion: "BRUM 315, CANELONES", clave: "mclfy86"}]
+                {numeroDeSocio: 1250, nombre: "MARTINA FERREIRA", direccion: "BRUM 315, CANELONES", clave: "mclfy86"}
+                ]
+
+
+// array para reparto
+// reparto: ["MICHAEL J. FOX", "CHRISTOPHER LLOYD", "CRISPIN GLOVER", "LEA THOMPSON"]

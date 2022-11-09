@@ -14,12 +14,13 @@ body {
 .monitor::before {
   content: " ";
   display: block;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
   background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  background-attachment: fixed;
   z-index: 2;
   height: auto;
   background-size: 100% 2px, 3px 100%;
@@ -44,7 +45,8 @@ p {
 .peliculas {
   display: flex;
   gap: 20px;
-  margin-top: 20px; }
+  margin-top: 20px;
+  flex-wrap: wrap; }
   .peliculas__item {
     max-width: 300px;
     background-color: #fff;
@@ -74,13 +76,15 @@ p {
       font-weight: 900;
       font-size: 12px; }
     .peliculas__item--boton {
-      margin-block: 10px; }
+      margin-block: 20px;
+      width: 100%; }
       .peliculas__item--boton a {
         background-color: #0700d8;
-        padding: 16px;
+        padding: 10px 16px;
         font-size: 14px;
         font-weight: 900;
         color: #fff;
-        border-radius: 5px; }
+        border-radius: 5px;
+        text-decoration: none; }
 
 /*# sourceMappingURL=estilos.css.map */
