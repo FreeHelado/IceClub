@@ -2,4 +2,6 @@
 $colorPrimario:#0700d8;
 $colorPrimarioDark: darken($colorPrimario, 25%);
 $colorPrimarioLight: lighten($colorPrimario, 50%);
+$colorPrimarioExtraLight: lighten($colorPrimario, 90%);
 $colorPrimarioMedio: lighten($colorPrimario, 30%);
+

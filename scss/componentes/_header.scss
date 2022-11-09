@@ -1,0 +1,43 @@
+.header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    &__logo {
+        color: #fff;
+        img {
+            width: 80px;
+        }
+    }
+    &__titulo {
+        color: #fff;
+        font-weight: 500;
+    }
+}
+
+.menu {
+    margin-block: 50px;
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 50px;
+        column-gap: 10px;
+        list-style: none;
+        li {
+            display: inline;
+            a {
+                background-color: $colorPrimarioExtraLight;
+                color: $colorPrimario;
+                padding: 15px;
+                border-radius: 5px;
+                text-decoration: none;
+                font-weight: 600;
+                transition: all .3s;
+                &:hover {
+                    box-shadow: 1px 0px 24px 0px rgba(0,0,0,0.75);
+                    background-color: $colorPrimarioDark;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
