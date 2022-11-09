@@ -38,10 +38,19 @@
                 <li><a href="#" onclick="ordenarPorAnio()">Ordenar Por Año</a></li>
                 <li><a href="#" onclick="filtrarPeliculas()">Filtrar por Nombre</a></li>
                 <li><a href="#" onclick="filtrarActores()">Filtrar por Actor</a></li>
-                <li><a href="#" onclick="cargarPeliculas(peliculas)">Ver Todas</a></li>
+                
                 <li><a href="#" onclick="reservar()">Reservar (Resultado en Consola JS)</a></li>
+                <li><a href="#" onclick="buscarSocio()">Buscar Socio (Resultado en Consola JS)</a></li>
+                <li><a href="#" onclick="cargarPeliculas(peliculas)">Ver Todas</a></li>
             </ul>
         </nav>
+
+        <div class="buscador">
+            <input type="search" id="inputSearch" placeholder="Ingresa el nombre de la película" class="">
+            <button onclick="filtrarPeliculasInput()"> BUSCAR</button>
+        </div>
+
+
 
         
     </header>
@@ -49,20 +58,6 @@
     <main>
         <section class="peliculas" id="container">
             
-            <!-- <div class="peliculas__item">
-                <div class="peliculas__item--img">
-                    <img src="./assets/img/backtothefuture.jpg" alt="">
-                </div>
-                <h1 class="peliculas__item--titulo">Volver al Futuro</h1>
-                <h2 class="peliculas__item--anio">1986</h2>
-                <p>Una máquina del tiempo transporta a un adolescente a los años 50, cuando sus padres todavía estudiaban en la secundaria.</p>
-                <div class="peliculas__item--reparto">
-                    <p>Michael J. Fox - Christopher Lloyd</p>
-                </div>
-                <div class="peliculas__item--boton">
-                    <a href="#">Reservar</a>
-                </div>
-            </div> -->
         </section>
     </main>
     

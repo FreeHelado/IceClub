@@ -1,4 +1,4 @@
-function retornoCard(pelicula) {
+function retornoItem(pelicula) {
     return `<div class="peliculas__item" id="pelicula${pelicula.id}">
                 <div class="peliculas__item--img">
                     <img src="${pelicula.imagen}" alt="Poster de ${pelicula.nombre}">

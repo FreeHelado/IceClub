@@ -1,3 +1,4 @@
+
 //// FILTRAR POR NOMBRE
 function filtrarPeliculas() {
     let peli = prompt("Ingresa parte del nombre:").toUpperCase()
@@ -10,6 +11,7 @@ function filtrarPeliculas() {
         }
 }
 
+
 //// FILTRAR POR ACTOR
 function filtrarActores() {
     let actor = prompt("Ingresa parte del nombre del actor:").toUpperCase()
@@ -20,6 +22,16 @@ function filtrarActores() {
         } else {
             alert("⚠ No se encontraron peliculas coincidentes")
         }
+}
+
+//// FILTRO CON INPUT 
+function filtrarPeliculasInput() {
+    if (inputSearch.value.trim() !== "") {
+        let resultado = peliculas.filter(pelicula => pelicula.nombre.includes(inputSearch.value.trim().toUpperCase()))
+            if (resultado.length > 0) {
+                cargarPeliculas(resultado)
+            }
+    }
 }
 
 //// ORDENAR POR AÑO
@@ -35,8 +47,6 @@ function ordenarPorAnio() {
     })
     cargarPeliculas(peliculas)
 }
-
-
 
 //// ***RESERVA //// 
 const ENVIO = parseFloat (50)
@@ -102,8 +112,6 @@ function reservar() {
     console.log("Gracias por ser parte de ICECLUB 🖤")
 }
 
-
-//// NUEVO INGRESO CON USUARIOS y RESERVA NUEVA
 
 // BUSCADOR DE SOCIO
 function buscarSocio() {
