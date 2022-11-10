@@ -15,7 +15,7 @@ cargarPeliculas(peliculas)
 //// FILTRO CON INPUT 
 const inputSearch = document.querySelector("input#inputSearch")
 
-// APAGAR TELE
+// EVENTO PARA CAMBIAR FONDO COLOR, ETC-
 const apagarVhsButton = document.querySelector("#vhs")
 const body = document.body
 const logo = document.querySelector("#logo")
@@ -28,14 +28,36 @@ function apagarVhs() {
         body.classList.remove("monitor")
         body.classList.add("body-2000")
         logo.src = "./assets/img/logo-3d.png"
-        apagarVhsButton.innerText = "Volver a VHS"
+        apagarVhsButton.innerText = "Modo VHS"
     } else {
-        apagarVhsButton.innerText = "Cambiar a Blue Ray"
+        apagarVhsButton.innerText = "Modo Blu-Ray"
         body.classList.add("monitor")
         body.classList.remove("body-2000")
         logo.src = "./assets/img/logo.svg"
-    }
-    
-
-    
+    }   
 } 
+
+
+// EVENTOS PARA LLAMAR FUNCIONES INICIALES
+const ordenar = document.querySelector("#ordenar")
+ordenar.addEventListener("click", ordenarPorAnio)
+
+const filtrarPorNombre = document.querySelector("#filtrarPorNombre")
+filtrarPorNombre.addEventListener("click", filtrarPeliculas)
+
+const filtrarPorActor = document.querySelector("#filtrarPorActor")
+filtrarPorActor.addEventListener("click", filtrarActores)
+
+const buscadorPeli = document.querySelector("#buscadorPeli")
+buscadorPeli.addEventListener("click", filtrarPeliculasInput)
+
+const reservaPeli = document.querySelector("#reservaPeli")
+reservaPeli.addEventListener("click", reservar)
+
+const buscadorSocio = document.querySelector("#buscadorSocio")
+buscadorSocio.addEventListener("click", buscarSocio)
+
+
+
+
+
