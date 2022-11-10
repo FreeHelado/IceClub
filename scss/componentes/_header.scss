@@ -2,15 +2,23 @@
     display: flex;
     align-items: center;
     gap: 20px;
+    justify-content: space-between;
     &__logo {
-        color: #fff;
+        display: flex;
+        gap: 15px;
+        align-items: center;
         img {
             width: 80px;
         }
+        &--titulo {
+            font-weight: 500;
+        }
     }
-    &__titulo {
-        color: #fff;
-        font-weight: 500;
+    
+    &__botones {
+        a {
+            @extend .boton-base;
+        }
     }
 }
 
@@ -25,18 +33,7 @@
         li {
             display: inline;
             a {
-                background-color: $colorPrimarioExtraLight;
-                color: $colorPrimario;
-                padding: 15px;
-                border-radius: 5px;
-                text-decoration: none;
-                font-weight: 600;
-                transition: all .3s;
-                &:hover {
-                    box-shadow: 1px 0px 24px 0px rgba(0,0,0,0.75);
-                    background-color: $colorPrimarioDark;
-                    color: #fff;
-                }
+                @extend .boton-base;
             }
         }
     }

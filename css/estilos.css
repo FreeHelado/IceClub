@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +10,16 @@ body {
   color: #fff;
   font-family: 'Source Code Pro', monospace;
   align-items: center;
-  padding: 20px; }
+  padding: 20px;
+  transition: all .3s; }
+
+.body-2000 {
+  background-image: url("../../assets/img/bg-fuzz-cream.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: 'Poppins', sans-serif;
+  transition: all .3s; }
 
 .monitor::before {
   content: " ";
@@ -24,7 +34,8 @@ body {
   z-index: 2;
   height: auto;
   background-size: 100% 2px, 3px 100%;
-  pointer-events: none; }
+  pointer-events: none;
+  transition: all .3s; }
 
 h1 {
   font-size: 60px;
@@ -42,17 +53,32 @@ p {
   overflow: hidden;
   max-width: 100%; }
 
+.boton-base, .header__botones a, .menu ul li a, .buscador a {
+  background-color: white;
+  color: #0700d8;
+  padding: 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all .3s; }
+  .boton-base:hover, .header__botones a:hover, .menu ul li a:hover, .buscador a:hover {
+    box-shadow: 1px 0px 24px 0px rgba(0, 0, 0, 0.75);
+    background-color: #030059;
+    color: #fff; }
+
 .header {
   display: flex;
   align-items: center;
-  gap: 20px; }
+  gap: 20px;
+  justify-content: space-between; }
   .header__logo {
-    color: #fff; }
+    display: flex;
+    gap: 15px;
+    align-items: center; }
     .header__logo img {
       width: 80px; }
-  .header__titulo {
-    color: #fff;
-    font-weight: 500; }
+    .header__logo--titulo {
+      font-weight: 500; }
 
 .menu {
   margin-block: 50px; }
@@ -64,18 +90,6 @@ p {
     list-style: none; }
     .menu ul li {
       display: inline; }
-      .menu ul li a {
-        background-color: white;
-        color: #0700d8;
-        padding: 15px;
-        border-radius: 5px;
-        text-decoration: none;
-        font-weight: 600;
-        transition: all .3s; }
-        .menu ul li a:hover {
-          box-shadow: 1px 0px 24px 0px rgba(0, 0, 0, 0.75);
-          background-color: #030059;
-          color: #fff; }
 
 .peliculas {
   display: flex;
@@ -140,16 +154,3 @@ p {
     color: #0700d8;
     font-family: 'Source Code Pro', monospace;
     border: none; }
-  .buscador button {
-    background-color: #fff;
-    padding: 10px 16px;
-    font-size: 14px;
-    font-weight: 700;
-    color: #0700d8;
-    border-radius: 5px;
-    text-decoration: none;
-    text-align: center;
-    transition: all .3s; }
-    .buscador button:hover {
-      background-color: #030059;
-      color: #fff; }

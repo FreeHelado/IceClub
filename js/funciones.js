@@ -124,3 +124,5 @@ function buscarSocio() {
             console.warn("🙈 No se encontró el nro de Socio")
         }
 }
+
+
