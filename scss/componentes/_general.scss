@@ -25,6 +25,14 @@ body {
   transition: all .3s;
 }
 
+button {
+  font-family: 'Source Code Pro', monospace;
+}
+
+input {
+  font-family: 'Source Code Pro', monospace;
+}
+
 .monitor::before {
     content: " ";
     display: block;

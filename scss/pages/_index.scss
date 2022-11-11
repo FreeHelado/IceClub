@@ -46,17 +46,19 @@
         &--boton {
             margin-block: 20px;
             width: 100%;
-            display: flex;
-            a {
-                background-color: $colorPrimario;
-                padding: 10px 16px;
-                font-size: 14px;
-                font-weight: 900;
-                color: #fff;
-                border-radius: 5px;
-                text-decoration: none;
-                flex-basis: 100%;
-                text-align: center;
+            background-color: $colorPrimario;
+            padding: 10px 16px;
+            font-size: 14px;
+            font-weight: 900;
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+            transition: all .3s;
+            border: none;
+            &:hover {
+                background-color: #fff;
+                color: $colorPrimario;
             }
         }
     }

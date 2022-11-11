@@ -21,6 +21,12 @@ body {
   font-family: 'Poppins', sans-serif;
   transition: all .3s; }
 
+button {
+  font-family: 'Source Code Pro', monospace; }
+
+input {
+  font-family: 'Source Code Pro', monospace; }
+
 .monitor::before {
   content: " ";
   display: block;
@@ -129,17 +135,19 @@ p {
     .peliculas__item--boton {
       margin-block: 20px;
       width: 100%;
-      display: flex; }
-      .peliculas__item--boton a {
-        background-color: #0700d8;
-        padding: 10px 16px;
-        font-size: 14px;
-        font-weight: 900;
-        color: #fff;
-        border-radius: 5px;
-        text-decoration: none;
-        flex-basis: 100%;
-        text-align: center; }
+      background-color: #0700d8;
+      padding: 10px 16px;
+      font-size: 14px;
+      font-weight: 900;
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+      text-align: center;
+      transition: all .3s;
+      border: none; }
+      .peliculas__item--boton:hover {
+        background-color: #fff;
+        color: #0700d8; }
 
 .buscador {
   display: flex;
