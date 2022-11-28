@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     gap: 20px;
-    justify-content: space-between;
+    justify-content: flex-start;
     &__logo {
         display: flex;
         gap: 15px;
@@ -16,8 +16,37 @@
     }
     
     &__botones {
-        a {
-            @extend .boton-base;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        gap: 25px;
+        &--vhs {
+            a {
+                @extend .boton-base;
+            }
+        }
+        
+        &--carrito {
+            a {
+                font-size: 50px;
+                color: #fff;
+                background-color: none;
+                position: relative;
+                &:hover {
+                    color: $colorPrimarioExtraLight;
+                }
+            }
+            span {
+                position: absolute;
+                top: 0;
+                right: -5px;
+                color: #FFF;
+                background-color: $colorPrimarioDark;
+                padding: 5px;
+                border-radius: 3PX;
+                font-size: 12px;
+            }
+            
         }
     }
 }

@@ -127,3 +127,11 @@ function buscarSocio() {
         }
 }
 
+
+///// NUEVA FUNCION DE RESERVA
+
+function reservarFull() {
+    
+    console.log("BIENVENID@S A ICECLUB 🍦")
+    alertaConfirmar('BIENVENID@S A ICECLUB 🍦', 'Sos socio del club?', 'Soy Socio', 'No soy Socio')
+}

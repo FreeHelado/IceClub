@@ -10,9 +10,19 @@ function retornoItem(pelicula) {
                     <p>${pelicula.reparto}</p>
                 </div>
                 <a href="#" id="reservaPeli">Reservar</a>
-                <button id="reservaPeli" class="peliculas__item--boton">
+                <button class="peliculas__item--boton" id="${pelicula.id}">
                  Reservar</button>
             </div>` 
 }     
 
 //<button id="reservaPeli${pelicula.id}" class="peliculas__item--boton">
+
+function armarCarrito(pelicula) {
+    return `<div class="carrito__reserva">
+                <div class="carrito__reserva--img">
+                    <img src="${pelicula.imagen}" alt="Poster de ${pelicula.nombre}">
+                </div>
+    
+                <h3>${pelicula.nombre}</h3>
+            </div>`
+}

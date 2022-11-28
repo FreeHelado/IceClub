@@ -1,6 +1,14 @@
 const carrito = []
 //// CARGA DEL LISTADO DE PELICULAS
 const container = document.getElementById("container")
+const cantidadCarrito = document.getElementById("cantidadCarrito")
+
+
+function mostrarCantidad() {
+    let totalProductosCarrito = carrito.length
+    cantidadCarrito.innerText = `${totalProductosCarrito}`
+} 
+
 
 function cargarPeliculas(array) {
     let contenido = ""
@@ -12,6 +20,24 @@ function cargarPeliculas(array) {
         }
 }
 cargarPeliculas(peliculas)
+
+///// AGREGAR AL CARRITO
+/// activar button
+const botonesAdd = document.querySelectorAll("button.peliculas__item--boton")
+
+function activarClickBotones() {
+    botonesAdd.forEach(boton => {
+        boton.addEventListener("click", ()=> {
+            let resultado = peliculas.find(peli => peli.id === parseInt(boton.id))
+            carrito.push(resultado)
+            console.clear()
+            console.table(carrito)
+            mostrarCantidad()      
+        })
+    })
+}
+activarClickBotones()
+
 
 //// FILTRO CON INPUT 
 const inputSearch = document.querySelector("input#inputSearch")
@@ -28,13 +54,11 @@ function apagarVhs() {
     if (body.classList.contains("monitor")){
         body.classList.remove("monitor")
         body.classList.add("body-2000")
-        logo.src = "./assets/img/logo-3d.png"
-        apagarVhsButton.innerText = "Modo VHS"
+        apagarVhsButton.innerText = "Volver a VHS"
     } else {
-        apagarVhsButton.innerText = "Modo Blu-Ray"
+        apagarVhsButton.innerText = "Arreglar Monitor"
         body.classList.add("monitor")
         body.classList.remove("body-2000")
-        logo.src = "./assets/img/logo.svg"
     }   
 } 
 
@@ -55,12 +79,12 @@ buscadorPeli.addEventListener("click", filtrarPeliculasInput)
 const reservaPeli = document.querySelector("#reservaPeli")
 reservaPeli.addEventListener("click", reservar)
 
+const reservaPeliFull = document.querySelector("#reservaPeliFull")
+reservaPeliFull.addEventListener("click", reservarFull)
+
 const buscadorSocio = document.querySelector("#buscadorSocio")
 buscadorSocio.addEventListener("click", buscarSocio)
 
-/// activar button
-// const reservaPeli = document.querySelector("#reservaPeli")
-// reservaPeli.addEventListener("click", reservar)
 
 
 /// CAPTURAR ENTER
@@ -80,6 +104,12 @@ inputSearch.addEventListener("search", ()=>{
     }else{
         cargarPeliculas(peliculas)
     }
+})
+
+//// SIDEBAR CARRITO
+const carritobtn = document.querySelector('.carrito--btn')
+carritobtn.addEventListener('click', function () {
+    document.getElementById('sidebar').classList.toggle('active');
 })
 
 

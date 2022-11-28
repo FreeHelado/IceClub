@@ -8,6 +8,7 @@
 
     <title>Ice Club - Proyecto JavaScript</title>
     <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     
      <!-- JS PRE ENTREGA 3 -->
      <!-- SWEET ALERT -->
@@ -21,8 +22,9 @@
 
      <!-- JS PRE ENTREGA 2 -->
     <script src="/js/variables.js"></script>
+    <script src="/js/alertas.js"></script>
     <script src="/js/funciones.js"></script>
-
+    
     <!-- Template Cards/Dom -->
     <script src="js/template.js"></script>
     <script defer src="js/dom.js"></script>
@@ -38,11 +40,6 @@
                 <img id="logo" src="./assets/img/logo.svg" alt="">
                 <h1 class="header__logo--titulo">Ice Club</h1>   
             </div>
-            
-            <div class="header__botones">
-                <a href="#" id="vhs">Modo Blu-Ray</a>
-            </div>
-        
         </section>
         
         <p class="separadores">
@@ -54,9 +51,10 @@
                 <li><a href="#" id="ordenar">Ordenar Por Año</a></li>
                 <li><a href="#" id="filtrarPorNombre">Filtrar por Nombre</a></li>
                 <li><a href="#" id="filtrarPorActor">Filtrar por Actor</a></li>
-                
+                <li><a href="#" id="reservaPeliFull">Reservar - Prueba</a></li>
                 <li><a href="#" id="reservaPeli">Reservar (Resultado en Consola JS)</a></li>
                 <li><a href="#" id="buscadorSocio">Buscar Socio (Resultado en Consola JS)</a></li>
+                <li><a href="#" id="vhs">Arreglar Monitor</a></li>
                 
             </ul>
         </nav>
@@ -65,17 +63,44 @@
             <input type="search" id="inputSearch" placeholder="Ingresa el nombre de la película" class="">
             <a href="#" id="buscadorPeli"> BUSCAR</a>
         </div>
-
+<!-- 
         <div>
             <input type="date">Fecha desde
             <input type="date">Fecha hasta
-        </div>
+        </div> -->
 
 
 
         
     </header>
 
+    <aside id="sidebar" class="">
+        <div class="contenedor--carrito">
+            
+            <div class="carrito--cantidad">
+                <span id="cantidadCarrito">0</span>
+            </div>
+            
+            <div class="carrito--btn">
+                <i class="bi bi-cassette"></i>
+            </div>
+            
+            <h2>Tu Reserva</h2>
+            
+            <section class="carrito" id="cart">
+                <div class="carrito__reserva">
+                    <div class="carrito__reserva--img">
+                        <img src="./assets/img/backtothefuture.jpg" alt="Poster de ${pelicula.nombre}">
+                    </div>
+                    
+                    <h3>VOLVER AL TUTURO</h3>
+                </div>
+                
+                <div>Precio Total= $1400</div>
+                <button>RESERVAR</button>
+            </section>
+        </div>
+    </aside>
     <main>
         <section class="peliculas" id="container">
             

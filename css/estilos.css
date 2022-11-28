@@ -11,13 +11,10 @@ body {
   font-family: 'Source Code Pro', monospace;
   align-items: center;
   padding: 20px;
-  transition: all .3s; }
+  transition: all .3s;
+  position: relative; }
 
 .body-2000 {
-  background-image: url("../../assets/img/bg-fuzz-cream.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
   font-family: 'Poppins', sans-serif;
   transition: all .3s; }
 
@@ -37,7 +34,7 @@ input {
   right: 0;
   background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
   background-attachment: fixed;
-  z-index: 2;
+  z-index: 3000;
   height: auto;
   background-size: 100% 2px, 3px 100%;
   pointer-events: none;
@@ -59,7 +56,7 @@ p {
   overflow: hidden;
   max-width: 100%; }
 
-.boton-base, .header__botones a, .menu ul li a, .buscador a {
+.boton-base, .header__botones--vhs a, .menu ul li a, .buscador a {
   background-color: white;
   color: #0700d8;
   padding: 15px;
@@ -67,7 +64,7 @@ p {
   text-decoration: none;
   font-weight: 600;
   transition: all .3s; }
-  .boton-base:hover, .header__botones a:hover, .menu ul li a:hover, .buscador a:hover {
+  .boton-base:hover, .header__botones--vhs a:hover, .menu ul li a:hover, .buscador a:hover {
     box-shadow: 1px 0px 24px 0px rgba(0, 0, 0, 0.75);
     background-color: #030059;
     color: #fff; }
@@ -76,7 +73,7 @@ p {
   display: flex;
   align-items: center;
   gap: 20px;
-  justify-content: space-between; }
+  justify-content: flex-start; }
   .header__logo {
     display: flex;
     gap: 15px;
@@ -85,6 +82,27 @@ p {
       width: 80px; }
     .header__logo--titulo {
       font-weight: 500; }
+  .header__botones {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 25px; }
+    .header__botones--carrito a {
+      font-size: 50px;
+      color: #fff;
+      background-color: none;
+      position: relative; }
+      .header__botones--carrito a:hover {
+        color: white; }
+    .header__botones--carrito span {
+      position: absolute;
+      top: 0;
+      right: -5px;
+      color: #FFF;
+      background-color: #030059;
+      padding: 5px;
+      border-radius: 3PX;
+      font-size: 12px; }
 
 .menu {
   margin-block: 50px; }
@@ -164,4 +182,69 @@ p {
     font-family: 'Source Code Pro', monospace;
     border: none; }
 
-/*# sourceMappingURL=estilos.css.map */
+aside {
+  width: 500px;
+  position: fixed;
+  height: 1000px;
+  right: -500px;
+  top: 0;
+  transition: all .3s; }
+  @media (max-width: 600px) {
+    aside {
+      width: 75%; } }
+  aside .contenedor--carrito {
+    position: relative;
+    background-color: #fff;
+    color: #0700d8;
+    padding: 25px;
+    height: 1000px; }
+    aside .contenedor--carrito h2 {
+      font-size: 26px;
+      font-weight: 700; }
+    aside .contenedor--carrito .carrito--cantidad {
+      position: absolute;
+      left: -50px;
+      top: 50px;
+      z-index: 5000; }
+      aside .contenedor--carrito .carrito--cantidad span {
+        font-size: 13px;
+        color: #fff;
+        background-color: #030059;
+        padding: 5px 10px;
+        border-radius: 25px; }
+    aside .contenedor--carrito .carrito--btn {
+      font-size: 40px;
+      position: absolute;
+      left: -100px;
+      color: #fff;
+      top: 55px;
+      border: 2px solid #fff;
+      background-color: #0700d8;
+      border-radius: 3px;
+      padding: 5px 10px;
+      transition: all .3s; }
+      aside .contenedor--carrito .carrito--btn:hover {
+        background-color: #fff;
+        color: #0700d8; }
+
+.active {
+  right: 0; }
+
+.carrito {
+  margin-block: 25px; }
+  .carrito__reserva {
+    border: 2px dashed #0700d8;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+    margin-block: 20px;
+    gap: 25px; }
+    .carrito__reserva h3 {
+      font-size: 24px;
+      font-weight: 500;
+      text-align: left; }
+    .carrito__reserva--img {
+      width: 50px; }
+      .carrito__reserva--img img {
+        max-width: 50px; }
