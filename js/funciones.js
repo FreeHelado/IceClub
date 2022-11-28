@@ -55,6 +55,8 @@ let precioEstreno = parseFloat (200)
 let precioSocio = precio * 0.50
 let peliDisponible = true
 
+
+
 // INGRESO DE USUARIO Y VALIDACION DE SOCIO
 
 function esSocio() {
@@ -124,5 +126,4 @@ function buscarSocio() {
             console.warn("🙈 No se encontró el nro de Socio")
         }
 }
-
 

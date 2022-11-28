@@ -9,8 +9,10 @@ function retornoItem(pelicula) {
                 <div class="peliculas__item--reparto">
                     <p>${pelicula.reparto}</p>
                 </div>
-                <button id="${pelicula.id}" class="peliculas__item--boton">
-                    Reservar
-                </button>
+                <a href="#" id="reservaPeli">Reservar</a>
+                // <button id="reservarPeli${pelicula.id}" class="peliculas__item--boton">
+                //     Reservar
+                // </a>
             </div>` 
-}       
+}     
+ 

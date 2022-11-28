@@ -58,6 +58,7 @@ reservaPeli.addEventListener("click", reservar)
 const buscadorSocio = document.querySelector("#buscadorSocio")
 buscadorSocio.addEventListener("click", buscarSocio)
 
+
 /// CAPTURAR ENTER
 // (e) objeto global Event
 inputSearch.addEventListener("keypress", (e)=> {
@@ -83,7 +84,6 @@ const botonesReserva = document.querySelectorAll(".peliculas__item--boton")
 function activarClickBotones() {
     botonesReserva.forEach(btn => {
         btn.addEventListener("click", ()=> {
-            
             let resultado = peliculas.find(pelicula => pelicula.id === parseInt(btn.id))
             carrito.push(resultado)
             console.clear()
