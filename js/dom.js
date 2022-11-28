@@ -21,18 +21,25 @@ function cargarPeliculas(array) {
 }
 cargarPeliculas(peliculas)
 
+
 ///// AGREGAR AL CARRITO
 /// activar button
 const botonesAdd = document.querySelectorAll("button.peliculas__item--boton")
+
 
 function activarClickBotones() {
     botonesAdd.forEach(boton => {
         boton.addEventListener("click", ()=> {
             let resultado = peliculas.find(peli => peli.id === parseInt(boton.id))
-            carrito.push(resultado)
-            console.clear()
-            console.table(carrito)
-            mostrarCantidad()      
+            let existe = carrito.some((peli) => peli.id === parseInt(boton.id))
+            if (existe) {
+                alertaValidacion("😪 Ya se encuentra en tu reserva")
+            } else {
+                carrito.push(resultado)
+                console.clear()
+                console.table(carrito)
+                mostrarCantidad()
+            }  
         })
     })
 }

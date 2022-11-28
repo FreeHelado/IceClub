@@ -19,3 +19,12 @@ Swal.fire({
     }
   })
 }
+
+//// TOAST ALERTA
+const alertaValidacion = (text) => {
+  Toastify({
+    text: text,
+    close: true,
+    duration: 5000
+    }).showToast();
+}
