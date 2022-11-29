@@ -16,12 +16,27 @@ function retornoItem(pelicula) {
 
 //<button id="reservaPeli${pelicula.id}" class="peliculas__item--boton">
 
-function armarCarrito(pelicula) {
+function armarCarrito(peli) {
     return `<div class="carrito__reserva">
                 <div class="carrito__reserva--img">
-                    <img src="${pelicula.imagen}" alt="Poster de ${pelicula.nombre}">
+                    <img src="${peli.imagen}" alt="Poster de ${peli.nombre}">
                 </div>
     
-                <h3>${pelicula.nombre}</h3>
+                <h3>${peli.nombre}</h3>
             </div>`
+}
+
+
+function recuperarCarrito() {
+    
+    let carritoHTML = ""
+    const miReserva = document.getElementById("miReserva")
+    const carrito = JSON.parse(localStorage.getItem("miCarrito"))
+    if (carrito.length > 0) {
+        carrito.forEach(peli => {
+            carritoHTML += armarCarrito(peli)
+        });
+        miReserva.innerHTML = carritoHTML
+    }
+    
 }

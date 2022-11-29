@@ -1,8 +1,9 @@
+
 const carrito = []
+
 //// CARGA DEL LISTADO DE PELICULAS
 const container = document.getElementById("container")
 const cantidadCarrito = document.getElementById("cantidadCarrito")
-
 
 function mostrarCantidad() {
     let totalProductosCarrito = carrito.length
@@ -36,9 +37,12 @@ function activarClickBotones() {
                 alertaValidacion("😪 Ya se encuentra en tu reserva")
             } else {
                 carrito.push(resultado)
+                localStorage.setItem("miCarrito", JSON.stringify(carrito))
                 console.clear()
                 console.table(carrito)
                 mostrarCantidad()
+                alertaValidacion("🍿 Se agregó a la reserva")
+                recuperarCarrito()
             }  
         })
     })
@@ -74,8 +78,8 @@ function apagarVhs() {
 const ordenar = document.querySelector("#ordenar")
 ordenar.addEventListener("click", ordenarPorAnio)
 
-const filtrarPorNombre = document.querySelector("#filtrarPorNombre")
-filtrarPorNombre.addEventListener("click", filtrarPeliculas)
+// const filtrarPorNombre = document.querySelector("#filtrarPorNombre")
+// filtrarPorNombre.addEventListener("click", filtrarPeliculas)
 
 const filtrarPorActor = document.querySelector("#filtrarPorActor")
 filtrarPorActor.addEventListener("click", filtrarActores)
@@ -86,8 +90,8 @@ buscadorPeli.addEventListener("click", filtrarPeliculasInput)
 const reservaPeli = document.querySelector("#reservaPeli")
 reservaPeli.addEventListener("click", reservar)
 
-const reservaPeliFull = document.querySelector("#reservaPeliFull")
-reservaPeliFull.addEventListener("click", reservarFull)
+// const reservaPeliFull = document.querySelector("#reservaPeliFull")
+// reservaPeliFull.addEventListener("click", reservarFull)
 
 const buscadorSocio = document.querySelector("#buscadorSocio")
 buscadorSocio.addEventListener("click", buscarSocio)
