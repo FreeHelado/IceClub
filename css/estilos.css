@@ -248,3 +248,28 @@ aside {
       width: 50px; }
       .carrito__reserva--img img {
         max-width: 50px; }
+  .carrito__subtotal {
+    margin-block: 15px;
+    font-size: 18px;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+  .carrito__envio {
+    margin-block: 5px;
+    font-size: 14px;
+    font-weight: 400;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+  .carrito__total {
+    margin-block: 10px;
+    font-size: 24px;
+    font-weight: 700;
+    border-top: 2px solid #0700d8;
+    padding-block: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+
+/*# sourceMappingURL=estilos.css.map */

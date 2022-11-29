@@ -25,6 +25,7 @@ const alertaValidacion = (text) => {
   Toastify({
     text: text,
     close: true,
+    position: "top-left",
     duration: 5000
     }).showToast();
 }

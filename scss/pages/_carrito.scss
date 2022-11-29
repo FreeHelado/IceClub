@@ -81,7 +81,35 @@ aside {
                 max-width: 50px;
             }
         }
+    }
 
+    &__subtotal {
+        margin-block: 15px;
+        font-size: 18px;
+        font-weight: 700;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__envio {
+        margin-block: 5px;
+        font-size: 14px;
+        font-weight: 400;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__total {
+        margin-block: 10px;
+        font-size: 24px;
+        font-weight: 700;
+        border-top: 2px solid $colorPrimario;
+        padding-block: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 }
 

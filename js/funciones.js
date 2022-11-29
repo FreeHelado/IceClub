@@ -48,13 +48,6 @@ function ordenarPorAnio() {
     cargarPeliculas(peliculas)
 }
 
-//// ***RESERVA //// 
-const ENVIO = parseFloat (50)
-let precio = parseFloat (120)
-let precioEstreno = parseFloat (200)
-let precioSocio = precio * 0.50
-let peliDisponible = true
-
 
 
 // INGRESO DE USUARIO Y VALIDACION DE SOCIO

@@ -27,6 +27,25 @@ cargarPeliculas(peliculas)
 /// activar button
 const botonesAdd = document.querySelectorAll("button.peliculas__item--boton")
 
+//// sumar total 
+//// PRECIOS //// 
+const ENVIO = parseFloat (10)
+let precio = parseFloat (120)
+let precioEstreno = parseFloat (200)
+let precioSocio = precio * 0.50
+
+const totalCarrito = document.querySelector("#totalCarrito")
+const subTotalCarrito = document.querySelector("#subTotalCarrito")
+const costoEnvio = document.querySelector("#costoEnvio")
+costoEnvio.innerText = `$ ${ENVIO}`
+
+function calcularTotal(cantidadReserva) {
+    let total = (precio * cantidadReserva) + ENVIO
+    let subTotal = total - ENVIO
+    totalCarrito.innerText = `$ ${total}`
+    subTotalCarrito.innerText = `$ ${subTotal}`
+}
+
 
 function activarClickBotones() {
     botonesAdd.forEach(boton => {
@@ -43,6 +62,7 @@ function activarClickBotones() {
                 mostrarCantidad()
                 alertaValidacion("🍿 Se agregó a la reserva")
                 recuperarCarrito()
+                calcularTotal(carrito.length)
             }  
         })
     })
