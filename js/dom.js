@@ -24,8 +24,9 @@ cargarPeliculas(peliculas)
 
 
 ///// AGREGAR AL CARRITO
-/// activar button
+/// activar buttones de Add y borrar
 const botonesAdd = document.querySelectorAll("button.peliculas__item--boton")
+const botonesBorrar = document.querySelectorAll("button.carrito__reserva--borrar")
 
 //// sumar total 
 //// PRECIOS //// 
@@ -57,8 +58,6 @@ function activarClickBotones() {
             } else {
                 carrito.push(resultado)
                 localStorage.setItem("miCarrito", JSON.stringify(carrito))
-                console.clear()
-                console.table(carrito)
                 mostrarCantidad()
                 alertaValidacion("🍿 Se agregó a la reserva")
                 recuperarCarrito()
@@ -68,6 +67,28 @@ function activarClickBotones() {
     })
 }
 activarClickBotones()
+
+/// BORRAR ITEMS
+
+
+function recuperarCarrito() {
+    let carritoHTML = ""
+    const miReserva = document.getElementById("miReserva")
+    const carrito = JSON.parse(localStorage.getItem("miCarrito"))
+    if (carrito.length > 0) {
+        carrito.forEach(peli => {
+            carritoHTML += armarCarrito(peli)
+            calcularTotal(carrito.length)
+        });
+        miReserva.innerHTML = carritoHTML
+        let totalProductosCarrito = carrito.length
+        cantidadCarrito.innerText = `${totalProductosCarrito}`
+    }
+}
+recuperarCarrito()
+
+//// CARGAR CARRITO LOCAL STORAGE
+const peliculasEnCarrito = JSON.parse(localStorage.getItem("miCarrito"))
 
 
 //// FILTRO CON INPUT 
@@ -81,7 +102,6 @@ const logo = document.querySelector("#logo")
 apagarVhsButton.addEventListener("click", apagarVhs)
 
 function apagarVhs() {
-    
     if (body.classList.contains("monitor")){
         body.classList.remove("monitor")
         body.classList.add("body-2000")

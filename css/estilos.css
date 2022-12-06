@@ -236,7 +236,7 @@ aside {
     border: 2px dashed #0700d8;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
     padding: 10px;
     margin-block: 20px;
     gap: 25px; }
@@ -248,6 +248,11 @@ aside {
       width: 50px; }
       .carrito__reserva--img img {
         max-width: 50px; }
+    .carrito__reserva--borrar {
+      border: none;
+      font-size: 18px;
+      background-color: transparent;
+      color: #0700d8; }
   .carrito__subtotal {
     margin-block: 15px;
     font-size: 18px;
