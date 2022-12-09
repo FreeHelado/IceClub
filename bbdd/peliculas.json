@@ -26,7 +26,7 @@
         "imagen": "./assets/img/backtothefuture3.jpg", 
         "nombre": "VOLVER AL FUTURO III", 
         "anio": 1990,
-        "descripcio": "Marty McFly sigue en 1955 y Doc ha retrocedido al año 1885, la época del salvaje oeste.", 
+        "descripcion": "Marty McFly sigue en 1955 y Doc ha retrocedido al año 1885, la época del salvaje oeste.", 
         "estreno": true, 
         "reparto": "MICHAEL J. FOX", 
         "categoria": "CIENCIA FICCION"

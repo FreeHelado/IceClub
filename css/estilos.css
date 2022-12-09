@@ -40,6 +40,22 @@ input {
   pointer-events: none;
   transition: all .3s; }
 
+.sidebar-bg::before {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(16, 16, 19, 0.8);
+  background-attachment: fixed;
+  z-index: 0;
+  height: auto;
+  background-size: 100% 2px, 3px 100%;
+  pointer-events: none;
+  transition: all .3s; }
+
 h1 {
   font-size: 60px;
   font-weight: 200; }
@@ -167,6 +183,11 @@ p {
       .peliculas__item--boton:hover {
         background-color: #fff;
         color: #0700d8; }
+  .peliculas__error {
+    width: 500px;
+    text-align: center; }
+    .peliculas__error pre {
+      font-size: 24px; }
 
 .buscador {
   display: flex;
@@ -186,7 +207,7 @@ aside {
   width: 500px;
   position: fixed;
   height: 1000px;
-  right: -500px;
+  right: -510px;
   top: 0;
   transition: all .3s; }
   @media (max-width: 600px) {
@@ -197,7 +218,8 @@ aside {
     background-color: #fff;
     color: #0700d8;
     padding: 25px;
-    height: 1000px; }
+    height: 1000px;
+    box-shadow: -10px 0px 15px 0px rgba(0, 0, 0, 0.5); }
     aside .contenedor--carrito h2 {
       font-size: 26px;
       font-weight: 700; }
@@ -281,3 +303,17 @@ aside {
     display: flex;
     justify-content: space-between;
     align-items: center; }
+  .carrito__reservar {
+    font-size: 22px;
+    background-color: #0700d8;
+    color: #fff;
+    padding: 10px;
+    font-weight: 400;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    transition: all .3s; }
+    .carrito__reservar:hover {
+      box-shadow: 1px 0px 24px 0px rgba(0, 0, 0, 0.5);
+      background-color: #030059; }

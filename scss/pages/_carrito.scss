@@ -2,7 +2,7 @@ aside {
     width: 500px;
     position: fixed; 
     height: 1000px;
-    right: -500px;
+    right: -510px;
     top: 0;
     transition: all .3s;
     @media (max-width: 600px) {
@@ -15,6 +15,7 @@ aside {
         color: $colorPrimario;
         padding: 25px;
         height: 1000px;
+        box-shadow: -10px 0px 15px 0px rgba(0,0,0,0.50);
         h2 {
             font-size: 26px;
             font-weight: 700;
@@ -123,6 +124,23 @@ aside {
         display: flex;
         justify-content: space-between;
         align-items: center;
+    }
+
+    &__reservar {
+            font-size: 22px;
+            background-color: $colorPrimario;
+            color: #fff;
+            padding: 10px;
+            font-weight: 400;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            transition: all .3s;
+        &:hover {
+            box-shadow: 1px 0px 24px 0px rgba(0,0,0,0.50);
+            background-color: $colorPrimarioDark;
+        }
     }
 }
 

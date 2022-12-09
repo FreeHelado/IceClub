@@ -47,6 +47,23 @@ input {
     transition: all .3s;
 }
 
+.sidebar-bg::before {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(16, 16, 19, 0.8);
+  background-attachment: fixed;
+  z-index: 0;
+  height: auto;
+  background-size: 100% 2px, 3px 100%;
+  pointer-events: none;
+  transition: all .3s;
+}
+
 h1 {
   font-size: 60px; 
   font-weight: 200;

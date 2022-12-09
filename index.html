@@ -36,33 +36,42 @@
 
 </head>
 <body class="monitor">
-    <header>
-        <section class="header">
-            <div class="header__logo">
-                <img id="logo" src="./assets/img/logo.svg" alt="">
-                <h1 class="header__logo--titulo">Ice Club</h1>   
+    
+
+    
+    <main id="main" class="">
+        <header>
+            <section class="header">
+                <div class="header__logo">
+                    <img id="logo" src="./assets/img/logo.svg" alt="">
+                    <h1 class="header__logo--titulo">Ice Club</h1>   
+                </div>
+            </section>
+            
+            <p class="separadores">
+                =========================================================================================================================================================================================================
+            </p>
+            <h2>Reservá tu película y te la llevamos a tu casa</h2>
+            <nav class="menu">
+                <ul>
+                    <li><a href="#" id="ordenar">Ordenar Por Año</a></li>
+                    <li><a href="#" id="filtrarPorActor">Filtrar por Actor</a></li>
+                    <li><a href="#" id="vhs">Arreglar Monitor</a></li>
+                    
+                </ul>
+            </nav>
+    
+            <div class="buscador">
+                <input type="search" id="inputSearch" placeholder="Ingresa el nombre de la película" class="">
+                <a href="#" id="buscadorPeli"> BUSCAR</a>
             </div>
+          
+        </header>
+        <section class="peliculas" id="container">
+            
         </section>
         
-        <p class="separadores">
-            =========================================================================================================================================================================================================
-        </p>
-        <h2>Reservá tu película y te la llevamos a tu casa</h2>
-        <nav class="menu">
-            <ul>
-                <li><a href="#" id="ordenar">Ordenar Por Año</a></li>
-                <li><a href="#" id="filtrarPorActor">Filtrar por Actor</a></li>
-                <li><a href="#" id="vhs">Arreglar Monitor</a></li>
-                
-            </ul>
-        </nav>
-
-        <div class="buscador">
-            <input type="search" id="inputSearch" placeholder="Ingresa el nombre de la película" class="">
-            <a href="#" id="buscadorPeli"> BUSCAR</a>
-        </div>
-      
-    </header>
+    </main>
 
     <aside id="sidebar" class="">
         <div class="contenedor--carrito">
@@ -96,17 +105,12 @@
                     <span id="totalCarrito">$ 0</span>
                 </div>
 
-
-
-                <button>RESERVAR</button>
+                <button class="carrito__reservar">
+                    RESERVAR
+                </button>
             </section>
         </div>
     </aside>
-    <main>
-        <section class="peliculas" id="container">
-            
-        </section>
-    </main>
     
 </body>
 </html>

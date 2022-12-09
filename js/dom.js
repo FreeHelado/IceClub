@@ -6,7 +6,8 @@ const cantidadCarrito = document.getElementById("cantidadCarrito")
 let botonesBorrar = document.querySelectorAll("button.carrito__reserva--borrar")
 
 //// CARGA DE LISTADO MEDIANTE AJAX
-const URL = 'bbdd/peliculas.json'
+const URL = 'https://6389416a4eccb986e88ec2ed.mockapi.io/peliculas'
+// const URL = 'bbdd/peliculas.json'
 const peliculas = []
 
 fetch(URL)
@@ -14,7 +15,7 @@ fetch(URL)
 .then((data) => peliculas.push(...data))
 .then(() => cargarPeliculas(peliculas))
 .then(()=> activarClickBotones())
-// .catch(error => container.innerHTML = retornoError())
+.catch(error => container.innerHTML = retornarError())
 
 function mostrarCantidad() {
     let totalProductosCarrito = carrito.length
@@ -186,6 +187,7 @@ inputSearch.addEventListener("search", ()=>{
 const carritobtn = document.querySelector('.carrito--btn')
 carritobtn.addEventListener('click', function () {
     document.getElementById('sidebar').classList.toggle('active');
+    document.getElementById('main').classList.toggle('sidebar-bg');
 })
 
 
