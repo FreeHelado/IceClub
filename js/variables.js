@@ -40,12 +40,3 @@ const peliculas = [{id: 1234,
                     reparto: "MACAULAY CULKIN", 
                     categoria: "COMEDIA"},
                    ]
-
-const socios = [{numeroDeSocio: 666, nombre: "ALEJANDRO FERREIRA", direccion: "BRUM 315, CANELONES", clave: "mclfy86"},
-                {numeroDeSocio: 5656, nombre: "NICOLÁS FERREIRA", direccion: "BRUM 315, CANELONES", clave: "mclfy86"},
-                {numeroDeSocio: 1250, nombre: "MARTINA FERREIRA", direccion: "BRUM 315, CANELONES", clave: "mclfy86"}
-                ]
-
-
-// array para reparto
-// reparto: ["MICHAEL J. FOX", "CHRISTOPHER LLOYD", "CRISPIN GLOVER", "LEA THOMPSON"]

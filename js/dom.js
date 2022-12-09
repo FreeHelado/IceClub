@@ -1,15 +1,24 @@
-
 const carrito = []
 
 //// CARGA DEL LISTADO DE PELICULAS
 const container = document.getElementById("container")
 const cantidadCarrito = document.getElementById("cantidadCarrito")
 
+//// CARGA DE LISTADO MEDIANTE AJAX
+const URL = 'bbdd/peliculas.json'
+const peliculas = []
+
+fetch(URL)
+.then((response)=> data = response.json())
+.then((data) => peliculas.push(...data))
+.then(() => cargarPeliculas(peliculas))
+.then(()=> activarClickBotones())
+// .catch(error => container.innerHTML = retornoError())
+
 function mostrarCantidad() {
     let totalProductosCarrito = carrito.length
     cantidadCarrito.innerText = `${totalProductosCarrito}`
 } 
-
 
 function cargarPeliculas(array) {
     let contenido = ""
@@ -23,9 +32,11 @@ function cargarPeliculas(array) {
 cargarPeliculas(peliculas)
 
 
+
+
 ///// AGREGAR AL CARRITO
 /// activar buttones de Add y borrar
-const botonesAdd = document.querySelectorAll("button.peliculas__item--boton")
+// const botonesAdd = document.querySelectorAll("button.peliculas__item--boton")
 const botonesBorrar = document.querySelectorAll("button.carrito__reserva--borrar")
 
 //// sumar total 
@@ -47,8 +58,8 @@ function calcularTotal(cantidadReserva) {
     subTotalCarrito.innerText = `$ ${subTotal}`
 }
 
-
 function activarClickBotones() {
+    const botonesAdd = document.querySelectorAll("button.peliculas__item--boton")
     botonesAdd.forEach(boton => {
         boton.addEventListener("click", ()=> {
             let resultado = peliculas.find(peli => peli.id === parseInt(boton.id))
@@ -90,7 +101,6 @@ recuperarCarrito()
 //// CARGAR CARRITO LOCAL STORAGE
 const peliculasEnCarrito = JSON.parse(localStorage.getItem("miCarrito"))
 
-
 //// FILTRO CON INPUT 
 const inputSearch = document.querySelector("input#inputSearch")
 
@@ -118,25 +128,11 @@ function apagarVhs() {
 const ordenar = document.querySelector("#ordenar")
 ordenar.addEventListener("click", ordenarPorAnio)
 
-// const filtrarPorNombre = document.querySelector("#filtrarPorNombre")
-// filtrarPorNombre.addEventListener("click", filtrarPeliculas)
-
-const filtrarPorActor = document.querySelector("#filtrarPorActor")
-filtrarPorActor.addEventListener("click", filtrarActores)
-
 const buscadorPeli = document.querySelector("#buscadorPeli")
 buscadorPeli.addEventListener("click", filtrarPeliculasInput)
 
-const reservaPeli = document.querySelector("#reservaPeli")
-reservaPeli.addEventListener("click", reservar)
-
-// const reservaPeliFull = document.querySelector("#reservaPeliFull")
-// reservaPeliFull.addEventListener("click", reservarFull)
-
-const buscadorSocio = document.querySelector("#buscadorSocio")
-buscadorSocio.addEventListener("click", buscarSocio)
-
-
+const filtrarPorActor = document.querySelector("#filtrarPorActor")
+filtrarPorActor.addEventListener("click", filtrarActores)
 
 /// CAPTURAR ENTER
 // (e) objeto global Event
