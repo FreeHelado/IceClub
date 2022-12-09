@@ -1,8 +1,9 @@
 const carrito = []
-
 //// CARGA DEL LISTADO DE PELICULAS
 const container = document.getElementById("container")
 const cantidadCarrito = document.getElementById("cantidadCarrito")
+
+let botonesBorrar = document.querySelectorAll("button.carrito__reserva--borrar")
 
 //// CARGA DE LISTADO MEDIANTE AJAX
 const URL = 'bbdd/peliculas.json'
@@ -32,12 +33,10 @@ function cargarPeliculas(array) {
 cargarPeliculas(peliculas)
 
 
-
-
 ///// AGREGAR AL CARRITO
 /// activar buttones de Add y borrar
 // const botonesAdd = document.querySelectorAll("button.peliculas__item--boton")
-const botonesBorrar = document.querySelectorAll("button.carrito__reserva--borrar")
+// const botonesBorrar = document.querySelectorAll("button.carrito__reserva--borrar")
 
 //// sumar total 
 //// PRECIOS //// 
@@ -57,6 +56,24 @@ function calcularTotal(cantidadReserva) {
     totalCarrito.innerText = `$ ${total}`
     subTotalCarrito.innerText = `$ ${subTotal}`
 }
+
+
+function recuperarCarrito() {
+    let carritoHTML = ""
+    const miReserva = document.getElementById("miReserva")
+    const carrito = JSON.parse(localStorage.getItem("miCarrito"))
+    if (carrito.length > 0) {
+        carrito.forEach(peli => {
+            carritoHTML += armarCarrito(peli)
+            calcularTotal(carrito.length)
+        });
+        miReserva.innerHTML = carritoHTML
+        let totalProductosCarrito = carrito.length
+        cantidadCarrito.innerText = `${totalProductosCarrito}`
+        actualizarBotonesBorrar()
+    }
+}
+recuperarCarrito()
 
 function activarClickBotones() {
     const botonesAdd = document.querySelectorAll("button.peliculas__item--boton")
@@ -79,24 +96,36 @@ function activarClickBotones() {
 }
 activarClickBotones()
 
+
 /// BORRAR ITEMS
-
-
-function recuperarCarrito() {
-    let carritoHTML = ""
-    const miReserva = document.getElementById("miReserva")
-    const carrito = JSON.parse(localStorage.getItem("miCarrito"))
-    if (carrito.length > 0) {
-        carrito.forEach(peli => {
-            carritoHTML += armarCarrito(peli)
-            calcularTotal(carrito.length)
-        });
-        miReserva.innerHTML = carritoHTML
-        let totalProductosCarrito = carrito.length
-        cantidadCarrito.innerText = `${totalProductosCarrito}`
-    }
+function actualizarBotonesBorrar() {
+    botonesBorrar = document.querySelectorAll("button.carrito__reserva--borrar")
+    botonesBorrar.forEach(boton => {
+        boton.addEventListener("click", activarClickBorrar)
+    })
 }
-recuperarCarrito()
+
+function activarClickBorrar() {
+    const botonesBorrar = document.querySelectorAll("button.carrito__reserva--borrar")
+    botonesBorrar.forEach(boton => {
+        boton.addEventListener("click", ()=> {
+            let pos = carrito.findIndex(peli => peli.id === parseInt(boton.id))
+            if (pos > -1) {
+                carrito.splice(pos, 1)
+                localStorage.setItem("miCarrito", JSON.stringify(carrito))
+                alertaValidacion("✌ Se Eliminó la pelicula de tu reserva")
+                recuperarCarrito()
+                activarClickBorrar()
+                mostrarCantidad()
+                calcularTotal(carrito.length)
+            }
+        })
+    })
+}
+activarClickBorrar()
+
+
+
 
 //// CARGAR CARRITO LOCAL STORAGE
 const peliculasEnCarrito = JSON.parse(localStorage.getItem("miCarrito"))

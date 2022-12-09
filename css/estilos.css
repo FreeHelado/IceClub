@@ -252,7 +252,12 @@ aside {
       border: none;
       font-size: 18px;
       background-color: transparent;
-      color: #0700d8; }
+      color: #0700d8;
+      transition: all .2s; }
+      .carrito__reserva--borrar:hover {
+        color: #030059;
+        transform: scale(1.1);
+        cursor: pointer; }
   .carrito__subtotal {
     margin-block: 15px;
     font-size: 18px;
@@ -276,5 +281,3 @@ aside {
     display: flex;
     justify-content: space-between;
     align-items: center; }
-
-/*# sourceMappingURL=estilos.css.map */

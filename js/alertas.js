@@ -29,3 +29,4 @@ const alertaValidacion = (text) => {
     duration: 5000
     }).showToast();
 }
+

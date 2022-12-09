@@ -28,4 +28,12 @@ function armarCarrito(peli) {
             </div>`   
 }
 
+function retornoError() {
+    return `<div class="card-error">
+                <h2>Houston, tenemos un problema 🔌</h2>
+                <h3>No pudimos cargar los productos. 🤦🏻‍♂️</h3>
+                <h3>Intenta nuevamente en unos instantes...</h3>
+            </div>`
+}
+
 
