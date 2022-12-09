@@ -1,4 +1,5 @@
-const carrito = []
+const carrito = JSON.parse(localStorage.getItem("miCarrito")) || [];
+
 //// CARGA DEL LISTADO DE PELICULAS
 const container = document.getElementById("container")
 const cantidadCarrito = document.getElementById("cantidadCarrito")
@@ -62,7 +63,7 @@ function calcularTotal(cantidadReserva) {
 function recuperarCarrito() {
     let carritoHTML = ""
     const miReserva = document.getElementById("miReserva")
-    const carrito = JSON.parse(localStorage.getItem("miCarrito"))
+    // const carrito = JSON.parse(localStorage.getItem("miCarrito"))
     if (carrito.length > 0) {
         carrito.forEach(peli => {
             carritoHTML += armarCarrito(peli)
