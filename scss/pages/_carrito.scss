@@ -12,7 +12,6 @@ aside {
     @media (max-width: 480px) {
         width: 100%;
         right: -103%;
-        position: absolute;
         height: 100%;
     }
 
@@ -201,7 +200,11 @@ aside {
                 border-radius: 5px;
                 color: $colorPrimario;
                 border: 2px solid $colorPrimario;
-                padding: 5px 15px;
+                padding: 5px 10px;
+                @media (max-width: 480px) {
+                    padding: 5px 0;
+                    font-size: 14px;
+                }
             }
         }
     }

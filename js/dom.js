@@ -2,9 +2,6 @@ const carrito = JSON.parse(localStorage.getItem("miCarrito")) || [];
 
 //// CARGA DEL LISTADO DE PELICULAS
 const container = document.getElementById("container")
-const cantidadCarrito = document.getElementById("cantidadCarrito")
-
-
 
 //// CARGA DE LISTADO MEDIANTE AJAX
 const URL = 'https://6389416a4eccb986e88ec2ed.mockapi.io/peliculas'
@@ -18,11 +15,6 @@ fetch(URL)
 .then(()=> activarClickBotones())
 .catch(error => container.innerHTML = retornarError())
 
-function mostrarCantidad() {
-    let totalProductosCarrito = carrito.length
-    cantidadCarrito.innerText = `${totalProductosCarrito}`
-} 
-
 function cargarPeliculas(array) {
     let contenido = ""
         if (array.length > 0) {
@@ -32,15 +24,23 @@ function cargarPeliculas(array) {
             container.innerHTML = contenido
         }
 }
-cargarPeliculas(peliculas)
 
+/// CANIDAD CARRITO
+const cantidadCarrito = document.getElementById("cantidadCarrito")
+function mostrarCantidad() {
+    let totalProductosCarrito = carrito.length
+    cantidadCarrito.innerText = `${totalProductosCarrito}`
+} 
 
-//// sumar total 
+//////////////////////////////
+//// CALCULO DE PRECIOS //////
+//////////////////////////////
+
 //// PRECIOS //// 
 const ENVIO = parseFloat (10)
 let precio = parseFloat (120)
 
-///// CALCULO DE DIAS
+///// CALCULO DE DIAS /////
 const desde = document.querySelector("#fechadesde")
 const hasta = document.querySelector("#fechahasta")
 
@@ -65,7 +65,6 @@ hasta.addEventListener("click", ()=> hasta.min = desde.value)
 hasta.addEventListener("change", calcularTotal)
 desde.addEventListener("change", calcularTotal)
 
-
 const calcularDias = ()=> {
     const DT = luxon.DateTime
     let inicial = DT.fromISO(desde.value);
@@ -81,6 +80,7 @@ const costoEnvio = document.querySelector("#costoEnvio")
 const cantidadDias = document.querySelector("#cantidadDias")
 costoEnvio.innerText = `$ ${ENVIO}`
 
+//// CALCULAR TOTAL ////
 function calcularTotal() {
     calcularDias()
     let subTotal = (precio * carrito.length)
@@ -98,6 +98,7 @@ function calcularTotal() {
     }  
 }
 
+/////// RECUPERAR CARRITO ////////
 function recuperarCarrito() {
     let carritoHTML = ""
     const miReserva = document.getElementById("miReserva")
@@ -121,6 +122,8 @@ function recuperarCarrito() {
 }
 recuperarCarrito()
 
+
+/////// AGREGAR PRODUCTOS AL CARRITO ////////
 function activarClickBotones() {
     const botonesAdd = document.querySelectorAll("button.peliculas__item--boton")
     botonesAdd.forEach(boton => {
@@ -141,9 +144,8 @@ function activarClickBotones() {
         })
     })
 }
-activarClickBotones()
 
-/// BORRAR ITEMS
+////// BORRAR ITEMS DEL CARRITO /////
 const eliminar = (id) => {
     const pelicula = carrito.find((pelicula) => pelicula.id === id)
     carrito.splice(carrito.indexOf(pelicula), 1)
@@ -218,7 +220,7 @@ cerrarCarrito.addEventListener('click', function () {
 })
 
 
-//// BTN RESERVA
+//// BTN RESERVA ////
 function confirmarReserva() {
     const btnReservar = document.querySelector("button.carrito__reservar")
     btnReservar.addEventListener("click", ()=> {
@@ -236,7 +238,7 @@ function limpiarcarrito() {
     carritoCargado()
 }
 
-
+////////////////////////////
 /// ESTILOS EN CARRITO ////
 //////////////////////////
 
@@ -258,6 +260,36 @@ function carritoCargado() {
 }
 carritoCargado()
 
+
+/////// FILTROS ///////
+//// FILTRO CON INPUT 
+function filtrarPeliculasInput() {
+    if (inputSearch.value.trim() !== "") {
+        let resultado = peliculas.filter(pelicula => pelicula.nombre.includes(inputSearch.value.trim().toUpperCase()) || pelicula.reparto.includes(inputSearch.value.trim().toUpperCase()) )
+            if (resultado.length > 0) {
+                cargarPeliculas(resultado)
+                activarClickBotones()
+            } else {
+                let busqueda = inputSearch.value.trim()
+                alertaNoSearch("💅 No encontramos ninguna película con " + busqueda)
+            }
+    }
+}
+
+//// ORDENAR POR AÑO
+function ordenarPorAnio() {
+    let peliculasOrdenadas = peliculas.sort((a, b) => {
+        if (a.anio > b.anio) {
+            return 1
+        } 
+        if (a.anio < b.anio) {
+            return -1
+        }
+        return 0
+    })
+    cargarPeliculas(peliculas)
+    activarClickBotones()
+}
 
 
 

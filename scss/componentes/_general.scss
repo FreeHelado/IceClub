@@ -104,4 +104,8 @@ p {
       background-color: $colorPrimarioDark;
       color: #fff;
   }
+  @media (max-width:480px) {
+    padding: 10px;
+    font-size: 13px;
+  }
 }
