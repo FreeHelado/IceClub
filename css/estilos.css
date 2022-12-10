@@ -59,10 +59,16 @@ input {
 h1 {
   font-size: 60px;
   font-weight: 200; }
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 40px; } }
 
 h2 {
   font-size: 30px;
   font-weight: 400; }
+  @media (max-width: 480px) {
+    h2 {
+      font-size: 23px; } }
 
 p {
   font-size: 20px;
@@ -96,6 +102,9 @@ p {
     align-items: center; }
     .header__logo img {
       width: 80px; }
+      @media (max-width: 480px) {
+        .header__logo img {
+          width: 40px; } }
     .header__logo--titulo {
       font-weight: 500; }
   .header__botones {
@@ -213,15 +222,18 @@ aside {
   right: -510px;
   top: 0;
   transition: all .3s; }
-  @media (max-width: 600px) {
+  @media (max-width: 480px) {
     aside {
-      width: 75%; } }
+      width: 100%;
+      right: -103%;
+      position: absolute;
+      height: 100%; } }
   aside .contenedor--carrito {
     position: relative;
     background-color: #fff;
     color: #0700d8;
     padding: 25px;
-    height: 1000px;
+    height: 100%;
     box-shadow: -10px 0px 15px 0px rgba(0, 0, 0, 0.5); }
     aside .contenedor--carrito h2 {
       font-size: 26px;
@@ -237,6 +249,18 @@ aside {
         background-color: #030059;
         padding: 5px 10px;
         border-radius: 25px; }
+    aside .contenedor--carrito .carrito__cabezal {
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+      aside .contenedor--carrito .carrito__cabezal .carrito--cerrar {
+        display: inline;
+        font-size: 24px;
+        cursor: pointer;
+        transition: all .1s; }
+        aside .contenedor--carrito .carrito__cabezal .carrito--cerrar:hover {
+          color: #030059;
+          transform: scale(1.1); }
     aside .contenedor--carrito .carrito--btn {
       font-size: 40px;
       position: absolute;
@@ -247,7 +271,8 @@ aside {
       background-color: #0700d8;
       border-radius: 3px;
       padding: 5px 10px;
-      transition: all .3s; }
+      transition: all .3s;
+      cursor: pointer; }
       aside .contenedor--carrito .carrito--btn:hover {
         background-color: #fff;
         color: #0700d8; }
@@ -360,3 +385,5 @@ aside {
     .carrito__reservar:hover {
       box-shadow: 1px 0px 24px 0px rgba(0, 0, 0, 0.5);
       background-color: #030059; }
+
+/*# sourceMappingURL=estilos.css.map */

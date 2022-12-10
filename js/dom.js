@@ -44,13 +44,26 @@ let precio = parseFloat (120)
 const desde = document.querySelector("#fechadesde")
 const hasta = document.querySelector("#fechahasta")
 
+let hoy = new Date()
+let dia = hoy.getDate()
+let manana = hoy.getDate() + 1
+let mes = hoy.getMonth() + 1
+let anio = hoy.getFullYear()
+let ahora = hoy.toLocaleDateString()
+let fechaHoy = anio + '-' + mes + '-' + dia
+let fechaManana = anio + '-' + mes + '-' + manana 
+
+function actualizarHoy() { 
+    desde.value = fechaHoy
+    hasta.value = fechaManana
+}
+actualizarHoy()
+
 desde.addEventListener("change", ()=> hasta.min = desde.value)
-
-let hoy = new Date();
-let ahora = hoy.toLocaleString();
-desde.addEventListener("click", ()=> desde.min = ahora)
-
+desde.addEventListener("click", ()=> desde.max = hasta.value)
+hasta.addEventListener("click", ()=> hasta.min = desde.value)
 hasta.addEventListener("change", calcularTotal)
+desde.addEventListener("change", calcularTotal)
 
 
 const calcularDias = ()=> {
@@ -72,9 +85,17 @@ function calcularTotal() {
     calcularDias()
     let subTotal = (precio * carrito.length)
     let total = (subTotal * calcularDias()) + ENVIO
+    let minimo = subTotal + ENVIO
     totalCarrito.innerText = `$ ${total}`
     subTotalCarrito.innerText = `$ ${subTotal}`
-    cantidadDias.innerText = `${calcularDias()} Días`
+    if (calcularDias() > 1) {
+        cantidadDias.innerText = `${calcularDias()} Días`
+    } else if (calcularDias() == 0) {
+        cantidadDias.innerText = `En el Día`
+        totalCarrito.innerText = `$ ${minimo}`
+    } else if (calcularDias() == 1) {
+        cantidadDias.innerText = `${calcularDias()} Día`
+    }  
 }
 
 function recuperarCarrito() {
@@ -83,6 +104,7 @@ function recuperarCarrito() {
     if (carrito.length > 0) {
         carrito.forEach(peli => {
             carritoHTML += armarCarrito(peli)
+            actualizarHoy()
             calcularTotal()
         });    
     } else if (carrito.length == 0) {
@@ -187,6 +209,12 @@ const carritobtn = document.querySelector('.carrito--btn')
 carritobtn.addEventListener('click', function () {
     document.getElementById('sidebar').classList.toggle('active');
     document.getElementById('main').classList.toggle('sidebar-bg');
+})
+
+const cerrarCarrito = document.querySelector('.carrito--cerrar')
+cerrarCarrito.addEventListener('click', function () {
+    document.getElementById('sidebar').classList.remove('active');
+    document.getElementById('main').classList.remove('sidebar-bg');
 })
 
 

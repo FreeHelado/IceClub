@@ -67,11 +67,17 @@ input {
 h1 {
   font-size: 60px; 
   font-weight: 200;
+  @media (max-width: 480px) {
+    font-size: 40px;
+  }
 }
 
 h2 {
     font-size: 30px;
     font-weight: 400;
+    @media (max-width: 480px) {
+      font-size: 23px;
+    }
 }
 
 p {

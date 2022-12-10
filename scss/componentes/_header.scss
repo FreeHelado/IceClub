@@ -9,6 +9,9 @@
         align-items: center;
         img {
             width: 80px;
+            @media (max-width: 480px) {
+                width: 40px;
+            }
         }
         &--titulo {
             font-weight: 500;
