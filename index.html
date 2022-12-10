@@ -55,14 +55,13 @@
             <nav class="menu">
                 <ul>
                     <li><a href="#" id="ordenar">Ordenar Por Año</a></li>
-                    <li><a href="#" id="filtrarPorActor">Filtrar por Actor</a></li>
                     <li><a href="#" id="vhs">Arreglar Monitor</a></li>
                     
                 </ul>
             </nav>
     
             <div class="buscador">
-                <input type="search" id="inputSearch" placeholder="Ingresa el nombre de la película" class="">
+                <input type="search" id="inputSearch" placeholder="Buscá por nombre de película o Actores" class="">
                 <a href="#" id="buscadorPeli"> BUSCAR</a>
             </div>
           
@@ -74,40 +73,53 @@
     </main>
 
     <aside id="sidebar" class="">
-        <div class="contenedor--carrito">
-            
+        
+        
+
+        <div class="contenedor--carrito"> 
             <div class="carrito--cantidad">
                 <span id="cantidadCarrito">0</span>
             </div>
-            
+
             <div class="carrito--btn">
                 <i class="bi bi-cassette"></i>
             </div>
             
             <h2>Tu Reserva</h2>
-            
+ 
             <section class="carrito">
-                <div id="miReserva"></div>
+
+                <div id="vacio" class="carrito__vacio-activo">
+                    🎬 No tienes Películas en tu Reserva
+                </div> 
+
+                <div id="miReserva" class="">
+
+
+                </div>
+                <div id="montos" class="carrito__montos-oculto">
+                    <div class="carrito__subtotal">
+                        <span>SubTotal</span>
+                        <span id="subTotalCarrito">$ 0</span>
+                    </div>
+                    <div class="carrito__envio">
+                        <span>Costo de envio</span>
+                        <span id="costoEnvio">$ 0</span>
+                    </div>
+                    <div class="carrito__total">
+                        <span>Total</span>
+                        <span id="totalCarrito">$ 0</span>
+                    </div>
+
+                    <button class="carrito__reservar">
+                        RESERVAR
+                    </button>
+                </div>
             
                 
-                <div class="carrito__subtotal">
-                    <span>SubTotal</span>
-                    <span id="subTotalCarrito">$ 0</span>
-                </div>
                 
-                <div class="carrito__envio">
-                    <span>Costo de envio</span>
-                    <span id="costoEnvio">$ 0</span>
-                </div>
 
-                <div class="carrito__total">
-                    <span>Total</span>
-                    <span id="totalCarrito">$ 0</span>
-                </div>
-
-                <button class="carrito__reservar">
-                    RESERVAR
-                </button>
+                
             </section>
         </div>
     </aside>

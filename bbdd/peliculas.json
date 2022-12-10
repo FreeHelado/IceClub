@@ -44,6 +44,17 @@
     },
     
     {
+        "id": 7891, 
+        "imagen": "./assets/img/forest.jpg", 
+        "nombre": "FOREST GUMP", 
+        "anio": 1994, 
+        "descripcion": "Cómica dramática estrenada en 1994. Basada en la novela homónima del escritor Winston Groom, la película fue...", 
+        "estreno": false, 
+        "reparto": "Tom Hanks", 
+        "categoria": "COMEDIA DRAMÁTICA"
+    },
+
+    {
         "id": 5678, 
         "imagen": "./assets/img/mipobreangelito.jpg", 
         "nombre": "MI POBRE ANGELITO", 

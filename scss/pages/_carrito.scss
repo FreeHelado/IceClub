@@ -1,3 +1,7 @@
+.ocultar {
+    display: none;
+}
+
 aside {
     width: 500px;
     position: fixed; 
@@ -63,6 +67,27 @@ aside {
 .carrito {
     margin-block: 25px;
     
+    &__vacio-activo {
+        display: block;
+        font-size: 20px;
+        font-weight: 500;
+        border: 2px dashed $colorPrimario;
+        padding: 15px;
+        margin-bottom: 50px;
+    }
+
+    &__vacio-oculto {
+        display: none;
+    }
+
+    &__montos-oculto {
+        display: none;
+    }
+
+    &__montos-activo {
+        display: block;
+    }
+
     &__reserva {
         border: 2px dashed $colorPrimario;
         display: flex;
@@ -125,6 +150,7 @@ aside {
         justify-content: space-between;
         align-items: center;
     }
+
 
     &__reservar {
             font-size: 22px;

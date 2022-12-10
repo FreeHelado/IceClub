@@ -16,17 +16,19 @@ function retornoItem(pelicula) {
 
 
 function armarCarrito(peli) {
-    return `<div class="carrito__reserva">
+        return `<div class="carrito__reserva">
                 <div class="carrito__reserva--img">
                     <img src="${peli.imagen}" alt="Poster de ${peli.nombre}">
                 </div>
     
                 <h3>${peli.nombre}</h3>
-                <button class="carrito__reserva--borrar" id="${peli.id}">
+
+                <button class="carrito__reserva--borrar" id="${peli.id}" onClick="eliminar(${peli.id})" >
                     <i class="bi bi-trash3"></i>
                 </button>
-            </div>`   
-}
+            </div>`  
+    }
+     
 
 function retornarError() {
     return `<div class="peliculas__error">
@@ -61,5 +63,7 @@ function retornarError() {
 
 </div>`
 }
+
+
 
 

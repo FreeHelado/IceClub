@@ -1,4 +1,3 @@
-
 //// FILTRAR POR NOMBRE
 function filtrarPeliculas() {
     let peli = prompt("Ingresa parte del nombre:").toUpperCase()
@@ -20,16 +19,19 @@ function filtrarActores() {
         if (encontrados.length > 0) {
             cargarPeliculas(encontrados)
         } else {
-            alert("⚠ No se encontraron peliculas coincidentes")
+            alertaNoSearch("No rey")
         }
 }
 
 //// FILTRO CON INPUT 
 function filtrarPeliculasInput() {
     if (inputSearch.value.trim() !== "") {
-        let resultado = peliculas.filter(pelicula => pelicula.nombre.includes(inputSearch.value.trim().toUpperCase()))
+        let resultado = peliculas.filter(pelicula => pelicula.nombre.includes(inputSearch.value.trim().toUpperCase()) || pelicula.reparto.includes(inputSearch.value.trim().toUpperCase()) )
             if (resultado.length > 0) {
                 cargarPeliculas(resultado)
+            } else {
+                let busqueda = inputSearch.value.trim()
+                alertaNoSearch("💅 No encontramos ninguna película con " + busqueda)
             }
     }
 }

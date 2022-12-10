@@ -1,6 +1,6 @@
 ///// ALERTAS
 
-/// ALERTA CONFIRMAR CANCELAR
+/// ALERTA CONFIRMAR RESERVA
 const alertaConfirmar = (title, text, confirmar, cancelar) => {
 Swal.fire({
     title: title,
@@ -29,4 +29,35 @@ const alertaValidacion = (text) => {
     duration: 5000
     }).showToast();
 }
+
+const alertaReserva = (titulo, texto) => {
+  Swal.fire({
+    title: titulo,
+    text: texto,
+    icon: 'info',
+    showCancelButton: true,
+    confirmButtonColor: '#0700d8',
+    cancelButtonColor: '#d33',
+    confirmButtonText: '¡Si! Reservar 🍿',
+    cancelButtonText: 'No'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire(
+        '🍿¡Listo!🍿',
+        'Tu reserva está lista, te enviamos la película a la brevedad',
+        'success'
+      )
+      limpiarcarrito()
+    }
+  })
+}
+
+const alertaNoSearch = (titulo) => {
+  Swal.fire({
+    icon: 'error',
+    title: 'Oops...',
+    text: titulo
+  })
+}
+
 

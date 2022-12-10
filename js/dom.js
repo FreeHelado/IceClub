@@ -4,7 +4,7 @@ const carrito = JSON.parse(localStorage.getItem("miCarrito")) || [];
 const container = document.getElementById("container")
 const cantidadCarrito = document.getElementById("cantidadCarrito")
 
-let botonesBorrar = document.querySelectorAll("button.carrito__reserva--borrar")
+
 
 //// CARGA DE LISTADO MEDIANTE AJAX
 const URL = 'https://6389416a4eccb986e88ec2ed.mockapi.io/peliculas'
@@ -35,11 +35,6 @@ function cargarPeliculas(array) {
 cargarPeliculas(peliculas)
 
 
-///// AGREGAR AL CARRITO
-/// activar buttones de Add y borrar
-// const botonesAdd = document.querySelectorAll("button.peliculas__item--boton")
-// const botonesBorrar = document.querySelectorAll("button.carrito__reserva--borrar")
-
 //// sumar total 
 //// PRECIOS //// 
 const ENVIO = parseFloat (10)
@@ -59,21 +54,25 @@ function calcularTotal(cantidadReserva) {
     subTotalCarrito.innerText = `$ ${subTotal}`
 }
 
-
 function recuperarCarrito() {
     let carritoHTML = ""
     const miReserva = document.getElementById("miReserva")
-    // const carrito = JSON.parse(localStorage.getItem("miCarrito"))
     if (carrito.length > 0) {
         carrito.forEach(peli => {
             carritoHTML += armarCarrito(peli)
             calcularTotal(carrito.length)
-        });
-        miReserva.innerHTML = carritoHTML
-        let totalProductosCarrito = carrito.length
-        cantidadCarrito.innerText = `${totalProductosCarrito}`
-        actualizarBotonesBorrar()
-    }
+        });    
+    } else if (carrito.length == 0) {
+        document.getElementById('miReserva').classList.add('ocultar');
+        document.getElementById('montos').classList.remove('carrito__montos-activo');
+        document.getElementById('montos').classList.add('carrito__montos-oculto');
+        document.getElementById('vacio').classList.remove('carrito__vacio-oculto');
+        document.getElementById('vacio').classList.add('carrito__vacio-activo');
+        
+    } 
+    miReserva.innerHTML = carritoHTML
+    let totalProductosCarrito = carrito.length
+    cantidadCarrito.innerText = `${totalProductosCarrito}`
 }
 recuperarCarrito()
 
@@ -88,6 +87,7 @@ function activarClickBotones() {
             } else {
                 carrito.push(resultado)
                 localStorage.setItem("miCarrito", JSON.stringify(carrito))
+                carritoCargado()
                 mostrarCantidad()
                 alertaValidacion("🍿 Se agregó a la reserva")
                 recuperarCarrito()
@@ -98,35 +98,14 @@ function activarClickBotones() {
 }
 activarClickBotones()
 
-
 /// BORRAR ITEMS
-function actualizarBotonesBorrar() {
-    botonesBorrar = document.querySelectorAll("button.carrito__reserva--borrar")
-    botonesBorrar.forEach(boton => {
-        boton.addEventListener("click", activarClickBorrar)
-    })
+const eliminar = (id) => {
+    const pelicula = carrito.find((pelicula) => pelicula.id === id)
+    carrito.splice(carrito.indexOf(pelicula), 1)
+    localStorage.setItem("miCarrito", JSON.stringify(carrito))
+    alertaValidacion("✌ Se Eliminó la pelicula de tu reserva")
+    recuperarCarrito()
 }
-
-function activarClickBorrar() {
-    const botonesBorrar = document.querySelectorAll("button.carrito__reserva--borrar")
-    botonesBorrar.forEach(boton => {
-        boton.addEventListener("click", ()=> {
-            let pos = carrito.findIndex(peli => peli.id === parseInt(boton.id))
-            if (pos > -1) {
-                carrito.splice(pos, 1)
-                localStorage.setItem("miCarrito", JSON.stringify(carrito))
-                alertaValidacion("✌ Se Eliminó la pelicula de tu reserva")
-                recuperarCarrito()
-                activarClickBorrar()
-                mostrarCantidad()
-                calcularTotal(carrito.length)
-            }
-        })
-    })
-}
-activarClickBorrar()
-
-
 
 
 //// CARGAR CARRITO LOCAL STORAGE
@@ -154,16 +133,12 @@ function apagarVhs() {
     }   
 } 
 
-
 // EVENTOS PARA LLAMAR FUNCIONES INICIALES
 const ordenar = document.querySelector("#ordenar")
 ordenar.addEventListener("click", ordenarPorAnio)
 
 const buscadorPeli = document.querySelector("#buscadorPeli")
 buscadorPeli.addEventListener("click", filtrarPeliculasInput)
-
-const filtrarPorActor = document.querySelector("#filtrarPorActor")
-filtrarPorActor.addEventListener("click", filtrarActores)
 
 /// CAPTURAR ENTER
 // (e) objeto global Event
@@ -190,6 +165,48 @@ carritobtn.addEventListener('click', function () {
     document.getElementById('sidebar').classList.toggle('active');
     document.getElementById('main').classList.toggle('sidebar-bg');
 })
+
+
+//// BTN RESERVA
+function confirmarReserva() {
+    const btnReservar = document.querySelector("button.carrito__reservar")
+    btnReservar.addEventListener("click", ()=> {
+        alertaReserva("¿Vas a Confirmar tu reserva?", "Tu reserva está cas lista") 
+    })   
+}
+confirmarReserva()
+
+function limpiarcarrito() {
+    carrito.splice(0, carrito.length);
+    localStorage.setItem("miCarrito", JSON.stringify(carrito))
+    recuperarCarrito()
+    let totalProductosCarrito = carrito.length
+    cantidadCarrito.innerText = `${totalProductosCarrito}`
+    carritoCargado()
+}
+
+
+/// ESTILOS EN CARRITO ////
+//////////////////////////
+
+
+////// CARRITO CARGADO
+function carritoCargado() {
+    if (carrito.length > 0) {
+        document.getElementById('vacio').classList.add('carrito__vacio-oculto');
+        document.getElementById('montos').classList.add('carrito__montos-activo');
+        document.getElementById('miReserva').classList.remove('ocultar');
+    }  else if (carrito.length == 0) {
+        document.getElementById('miReserva').classList.add('ocultar');
+        document.getElementById('montos').classList.remove('carrito__montos-activo');
+        document.getElementById('montos').classList.add('carrito__montos-oculto');
+        document.getElementById('vacio').classList.remove('carrito__vacio-oculto');
+        document.getElementById('vacio').classList.add('carrito__vacio-activo');
+        
+    } 
+}
+carritoCargado()
+
 
 
 
