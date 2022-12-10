@@ -13,6 +13,7 @@
         border-radius: 5px;
         color: $colorPrimarioDark;
         transition: all .3s;
+        position: relative;
         &:hover {
             box-shadow: 1px 0px 24px 0px rgba(0,0,0,0.75);
             background-color: $colorPrimarioDark;
@@ -44,6 +45,19 @@
             font-size: 12px;
             }
         }
+
+        &--estreno {
+            position: absolute;
+            z-index: 3;
+            top: 20px;
+            right: 20px;
+            color: #fff;
+            background-color: $colorPrimarioDark;
+            border-radius: 3px;
+            border: 2px solid $colorPrimarioLight;
+            padding: 5px;
+        }
+
         &--boton {
             margin-block: 20px;
             width: 100%;

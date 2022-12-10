@@ -61,8 +61,51 @@
         "anio": 1990,
         "descripcion": "Un encantador niño de 8 años desafía a un torpe par de ladrones cuando, accidentalmente, sus padres lo olvidan en casa.",  
         "estreno": true, 
-        "reparto": "MACAULAY CULKIN", 
+        "reparto": "MACAULAY CULKIN, JOE PESCI, DANIEL STERN", 
+        "categoria": "COMEDIA"
+    },
+    
+    {
+        "id": 9876, 
+        "imagen": "./assets/img/lamascara.jpg", 
+        "nombre": "LA MÁSCARA", 
+        "anio": 1994,
+        "descripcion": "Una máscara antigua transforma a un monótono empleado bancario en un Romeo sonriente con poderes sobrehumanos.",  
+        "estreno": true, 
+        "reparto": "JIM CARREY, CAMERON DÍAZ, PETER GREENE", 
+        "categoria": "COMEDIA"
+    },
+
+    {
+        "id": 8765, 
+        "imagen": "./assets/img/tortu.jpg", 
+        "nombre": "LAS TORTUGAS NINJAS", 
+        "anio": 1990,
+        "descripcion": "Debido a haber estado expuestas a la radiación, cuatro tortugas de las alcantarillas de Nueva York alcanzan el tamaño de una persona.",  
+        "estreno": false, 
+        "reparto": "RAFAEL, MIGUEL ANGEL, DONATELLO, LEONARDO", 
+        "categoria": "ANIMADA"
+    }, 
+
+    {
+        "id": 7654, 
+        "imagen": "./assets/img/tonto.jpg", 
+        "nombre": "TONTO Y RETONTO", 
+        "anio": 1994,
+        "descripcion": "La vida de Lloyd y Harry, dos amigos de una estupidez supina, es un auténtico desastre. ",  
+        "estreno": true, 
+        "reparto": "JIM CARREY, JEFF DANIELS",
+        "categoria": "COMEDIA"
+    }, 
+
+    {
+        "id": 6543, 
+        "imagen": "./assets/img/stuar.jpg", 
+        "nombre": "STUART LITTLE", 
+        "anio": 1999,
+        "descripcion": "La familia Stuart adopta al pequeño ratón llamado Stuart al que consideran como a su hijo.",  
+        "estreno": true, 
+        "reparto": "STUART, MICHAEL J.FOX",
         "categoria": "COMEDIA"
     }
-    
 ]

@@ -158,7 +158,8 @@ p {
     padding: 15px;
     border-radius: 5px;
     color: #030059;
-    transition: all .3s; }
+    transition: all .3s;
+    position: relative; }
     .peliculas__item:hover {
       box-shadow: 1px 0px 24px 0px rgba(0, 0, 0, 0.75);
       background-color: #030059;
@@ -180,6 +181,16 @@ p {
     .peliculas__item--reparto p {
       font-weight: 900;
       font-size: 12px; }
+    .peliculas__item--estreno {
+      position: absolute;
+      z-index: 3;
+      top: 20px;
+      right: 20px;
+      color: #fff;
+      background-color: #030059;
+      border-radius: 3px;
+      border: 2px solid #d9d8ff;
+      padding: 5px; }
     .peliculas__item--boton {
       margin-block: 20px;
       width: 100%;
@@ -392,3 +403,5 @@ aside {
     .carrito__reservar:hover {
       box-shadow: 1px 0px 24px 0px rgba(0, 0, 0, 0.5);
       background-color: #030059; }
+
+/*# sourceMappingURL=estilos.css.map */
