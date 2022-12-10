@@ -15,8 +15,9 @@
      <!-- SWEET ALERT -->
      <script defer src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
      <script type="text/javascript" defer src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    
     <!-- LUXOR -->
-    <!-- <script src="librerias.js"></script> -->
+    <script src="https://moment.github.io/luxon/global/luxon.min.js"></script>
 
 
     <!-- JS PRE ENTREGA 1 -->
@@ -98,6 +99,18 @@
 
                 </div>
                 <div id="montos" class="carrito__montos-oculto">
+                    <div class="carrito__fechas">
+                        <div class="carrito__fechas--item">
+                            <label for="fechadesde">Desde:</label>
+                            <input type="date" name="fechadesde" id="fechadesde">
+                        </div>
+                        <div class="carrito__fechas--item">
+                            <label for="fechahasta">Devolución:</label>
+                            <input type="date" name="fechahasta" id="fechahasta">
+                        </div>
+                        
+                    </div>
+
                     <div class="carrito__subtotal">
                         <span>SubTotal</span>
                         <span id="subTotalCarrito">$ 0</span>
@@ -106,6 +119,12 @@
                         <span>Costo de envio</span>
                         <span id="costoEnvio">$ 0</span>
                     </div>
+
+                    <div class="carrito__dias">
+                        <span>Días de Reserva</span>
+                        <span id="cantidadDias">0 Días</span>
+                    </div>
+
                     <div class="carrito__total">
                         <span>Total</span>
                         <span id="totalCarrito">$ 0</span>

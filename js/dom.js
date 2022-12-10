@@ -39,19 +39,42 @@ cargarPeliculas(peliculas)
 //// PRECIOS //// 
 const ENVIO = parseFloat (10)
 let precio = parseFloat (120)
-let precioEstreno = parseFloat (200)
-let precioSocio = precio * 0.50
+
+///// CALCULO DE DIAS
+const desde = document.querySelector("#fechadesde")
+const hasta = document.querySelector("#fechahasta")
+
+desde.addEventListener("change", ()=> hasta.min = desde.value)
+
+let hoy = new Date();
+let ahora = hoy.toLocaleString();
+desde.addEventListener("click", ()=> desde.min = ahora)
+
+hasta.addEventListener("change", calcularTotal)
+
+
+const calcularDias = ()=> {
+    const DT = luxon.DateTime
+    let inicial = DT.fromISO(desde.value);
+    let final = DT.fromISO(hasta.value);
+    let resultado = final.diff(inicial, ['days']).toObject()
+    return resultado.days
+}
+calcularDias()
 
 const totalCarrito = document.querySelector("#totalCarrito")
 const subTotalCarrito = document.querySelector("#subTotalCarrito")
 const costoEnvio = document.querySelector("#costoEnvio")
+const cantidadDias = document.querySelector("#cantidadDias")
 costoEnvio.innerText = `$ ${ENVIO}`
 
-function calcularTotal(cantidadReserva) {
-    let total = (precio * cantidadReserva) + ENVIO
-    let subTotal = total - ENVIO
+function calcularTotal() {
+    calcularDias()
+    let subTotal = (precio * carrito.length)
+    let total = (subTotal * calcularDias()) + ENVIO
     totalCarrito.innerText = `$ ${total}`
     subTotalCarrito.innerText = `$ ${subTotal}`
+    cantidadDias.innerText = `${calcularDias()} Días`
 }
 
 function recuperarCarrito() {
@@ -60,7 +83,7 @@ function recuperarCarrito() {
     if (carrito.length > 0) {
         carrito.forEach(peli => {
             carritoHTML += armarCarrito(peli)
-            calcularTotal(carrito.length)
+            calcularTotal()
         });    
     } else if (carrito.length == 0) {
         document.getElementById('miReserva').classList.add('ocultar');
@@ -206,6 +229,7 @@ function carritoCargado() {
     } 
 }
 carritoCargado()
+
 
 
 
